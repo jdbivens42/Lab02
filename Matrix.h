@@ -1,6 +1,6 @@
 #if !defined MATRIX_H
 #define MATRIX_H
-
+//This is a test comment to show how git works.
 //the indices are not 0-based!!
 class Matrix
 {
