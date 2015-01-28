@@ -2,9 +2,8 @@
 #include <iostream>
 #include <string>
 
-using namespace ReadFile;
 
-ReadFile(const char* file_name)
+ReadFile::ReadFile(const char* file_name)
 {
       input_file.open(file_name);
 	  if (input_file)
@@ -21,12 +20,12 @@ ReadFile(const char* file_name)
 	  
 }
 
-~ReadFile()
+ReadFile::~ReadFile()
 {
   close();
 }
 
-String* readLine()
+String* ReadFile::readLine()
 {
   if (closed || _eof) return NULL;
 
@@ -40,3 +39,16 @@ String* readLine()
 		
 }
 
+bool ReadFile::eof()
+{
+  return _eof;
+}
+
+void ReadFile::close()
+{
+  if (!closed)
+  {
+	 input_file.close();
+	 closed = true;
+  }
+}

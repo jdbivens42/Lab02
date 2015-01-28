@@ -11,32 +11,11 @@ class ReadFile
    public:
    
    ReadFile(const char* file_name);
-   
-   ~ReadFile();
-   
-   //String* readLine()
-
-   //test comment
-   
-   bool eof()
-   {
-      return _eof;
-   }
-   
-   
-   
-   void close()
-   {
-      if (!closed)
-      {
-         input_file.close();
-         closed = true;
-      }
-   }
+   ~ReadFile(); 
+   String* readLine();
+   bool eof();
+   void close();
 	
-
-
-
    private:
    ifstream input_file;
    bool _eof;
