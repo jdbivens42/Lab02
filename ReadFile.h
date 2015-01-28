@@ -14,9 +14,9 @@ class ReadFile
    
    ~ReadFile();
    
-   String* readLine()
+   //String* readLine()
 
-   
+   //test comment
    
    bool eof()
    {
