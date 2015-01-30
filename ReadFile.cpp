@@ -16,8 +16,6 @@ ReadFile::ReadFile(const char* file_name)
 	     _eof = true;
 		 closed = true;
 	  }
-	  
-	  
 }
 
 ReadFile::~ReadFile()
