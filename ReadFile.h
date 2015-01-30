@@ -6,7 +6,7 @@
 #include <fstream>
 using namespace std;
 
-//! Class to allow access to a file.
+//! Class to allow read access to a file.
 /*!
  * The ReadFile class accepts a string literal (const char*) through the constructor.
  * The constructor will attempt to open the file in input mode.
@@ -31,9 +31,10 @@ class ReadFile
    ~ReadFile(); 
    
    //Get line of text from input file; return String* to that text.
+   //Returns NULL if read fails.
    String* readLine();
    
-   //Tests (programmer defined) EOF status. False if constructor failed
+   //Tests (programmer defined) EOF status. False if constructor failed.
    bool eof();
    
    //If ReadFile is not closed, this function closes it.
