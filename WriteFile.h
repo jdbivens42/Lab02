@@ -13,9 +13,9 @@ class WriteFile
 		bool closed;
 	
 	public:
-		WriteFile(const char* file_name)  //Constructor
+		WriteFile(const char* file_name);  //Constructor
 		~WriteFile(); //De-constructor
-		void writeLine();
+		void writeLine( String* line);
 		void close();
 
 };
