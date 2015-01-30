@@ -6,6 +6,13 @@
 #include <fstream>
 using namespace std;
 
+/*
+	The WriteFile class accepts a string literal ( const char* ) through the constructor
+	It will attempt to open a a file in output mode
+	The Destructor is going to close the file if it is not already closed.
+
+*/
+
 class WriteFile
 {
 	private:
@@ -13,9 +20,13 @@ class WriteFile
 		bool closed;
 	
 	public:
-		WriteFile(const char* file_name);  //Constructor
-		~WriteFile(); //De-constructor
-		void writeLine( String* line);
+// Constructor, used to open the file
+		WriteFile(const char* file_name);
+// Destructor, calls close function to close the file	
+		~WriteFile();
+// Accepts a String* to text and writes that text to an output file
+		void writeLine( String* line); 
+// closes the file
 		void close();
 
 };
