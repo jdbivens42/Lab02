@@ -1,33 +1,31 @@
 #include "WriteFile.h"
 #include <sstream>
 
-WriteFile* createWriteFile(const char* file_name)
+WriteFile :: WriteFile(const char* file_name)
 {
-   WriteFile* wf = new WriteFile;
-   wf->output_file.open(file_name);
-   wf->closed = false;
-   return wf;
+   output_file.open(file_name);
+   closed = false;
+   
 }
 
-void WriteFile :: destroyWriteFile()
+WriteFile :: ~WriteFile()
 {
-   close(wf);
-   delete wf;
+	close();
 }
 
 void WriteFile :: close()
 {
-   if (!wf->closed)
+   if (!closed)
    {
-      wf->output_file.close();
-      wf->closed = true;
+      output_file.close();
+      closed = true;
    }
 }
 
-void WriteFile :: writeLine()
+void WriteFile :: writeLine( String* line )
 {
-   if (!wf->closed && line->length() > 0)
+   if (!closed && line->length() > 0)
    {
-      wf->output_file << line->getText() << endl;
+      output_file << line->getText() << endl;
    }
 }
