@@ -9,13 +9,13 @@ WriteFile* createWriteFile(const char* file_name)
    return wf;
 }
 
-void destroyWriteFile(WriteFile* wf)
+void WriteFile :: destroyWriteFile()
 {
    close(wf);
    delete wf;
 }
 
-void close(WriteFile* wf)
+void WriteFile :: close()
 {
    if (!wf->closed)
    {
@@ -24,7 +24,7 @@ void close(WriteFile* wf)
    }
 }
 
-void writeLine(WriteFile* wf, String* line)
+void WriteFile :: writeLine()
 {
    if (!wf->closed && line->length() > 0)
    {
